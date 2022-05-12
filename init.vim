@@ -84,8 +84,8 @@ silent:    exec "w"
 silent:    exec '!g++ % -o %<'
         exec '! ./%<'
 endfunc
-autocmd FileType rust nnoremap <silent> <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
+autocmd FileType rust nnoremap <silent> <F5> :call CompileRunRust()<CR>
+func! CompileRunRust()
 silent:    exec "w"
         exec '!cargo run'
 endfunc
@@ -96,8 +96,8 @@ fun! CompileRunPy()
     exec "FloatermNew --autoclose=0 python3 %"
 endfunc
 
-autocmd FileType html nnoremap <F5> :call CompileRunPy()<CR>
-fun! CompileRunPy()
+autocmd FileType html nnoremap <F5> :call CompileRunHtml()<CR>
+fun! CompileRunHtml()
     exec "w"
     exec "! google-chrome %"
 endfunc
