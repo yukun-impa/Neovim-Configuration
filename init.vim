@@ -22,6 +22,8 @@ Plug 'tmsvg/pear-tree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
+Plug 'habamax/vim-habanight'
+
 call plug#end()
 "coc-extensions
 let g:coc_global_extensions = [
@@ -54,7 +56,8 @@ augroup html_pairs
     augroup END
 
 imap jk <ESC>
-colorscheme gruvbox
+set termguicolors
+colorscheme habanight
 let g:airline_theme='powerlineish'
 set laststatus=2
 
