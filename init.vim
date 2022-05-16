@@ -51,7 +51,7 @@ let g:pear_tree_pairs = {
 augroup html_pairs
         autocmd!
         autocmd FileType html let b:pear_tree_pairs = {
-            \ '<*>': {'closer': '</*>', 'not_if': ['br', 'meta', 'img']}
+            \ '<*>': {'closer': '</*>', 'not_if': ['br', 'meta', 'img', 'hr']}
                     \ }
     augroup END
 
@@ -72,8 +72,8 @@ func! PreviousBuffer()
     exec "bn"
 endfunc
 
-nnoremap <silent> <F3> :call PreviousBuffer()<CR>
-func! PreviousBuffer()
+nnoremap <silent> <F3> :call NextBuffer()<CR>
+func! NextBuffer()
     exec "w!"
     exec "bp"
 endfunc
