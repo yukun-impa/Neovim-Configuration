@@ -56,8 +56,7 @@ augroup html_pairs
     augroup END
 
 imap jk <ESC>
-set termguicolors
-colorscheme habanight
+colorscheme gruvbox
 let g:airline_theme='powerlineish'
 set laststatus=2
 
@@ -93,6 +92,11 @@ silent:    exec "w"
         exec '!cargo run'
 endfunc
 
+autocmd FileType rust nnoremap <silent> <F5> :call CompileTestRust()<CR>
+func! CompileTestRust()
+silent:    exec "w"
+        exec '!cargo test'
+endfunc
 autocmd FileType python nnoremap <F5> :call CompileRunPy()<CR>
 fun! CompileRunPy()
     exec "w"
